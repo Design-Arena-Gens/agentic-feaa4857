@@ -1,0 +1,451 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top, #111b39 0%, #0c101f 55%, #05070c 100%);
+  color: #f4f7ff;
+  padding: 56px 16px 96px;
+}
+
+.main {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 36px;
+  border-radius: 24px;
+  background: rgba(18, 26, 50, 0.78);
+  border: 1px solid rgba(89, 115, 236, 0.25);
+  box-shadow: 0 18px 40px rgba(4, 9, 21, 0.6);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  max-width: 720px;
+  color: rgba(221, 230, 255, 0.88);
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 24px;
+}
+
+.panel {
+  background: rgba(14, 20, 37, 0.9);
+  border: 1px solid rgba(95, 131, 255, 0.2);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 14px 32px rgba(2, 5, 12, 0.48);
+}
+
+.panelHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panelTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.panelDescription {
+  font-size: 0.98rem;
+  color: rgba(206, 217, 255, 0.76);
+}
+
+.modelGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.modelOption {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(95, 131, 255, 0.2);
+  background: rgba(25, 35, 63, 0.62);
+  cursor: pointer;
+  transition: 0.24s ease;
+}
+
+.modelOption:hover {
+  border-color: rgba(132, 158, 255, 0.65);
+  transform: translateY(-1px);
+}
+
+.modelSelected {
+  border-color: rgba(149, 173, 255, 0.95);
+  background: rgba(64, 84, 151, 0.72);
+  box-shadow: 0 10px 24px rgba(0, 12, 54, 0.45);
+}
+
+.modelCheckbox {
+  margin-top: 4px;
+  width: 20px;
+  height: 20px;
+  accent-color: #7c93ff;
+  flex-shrink: 0;
+}
+
+.modelInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modelName {
+  font-weight: 600;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.modelBadge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(122, 153, 255, 0.18);
+  font-size: 0.75rem;
+}
+
+.modelCapabilities {
+  font-size: 0.82rem;
+  color: rgba(199, 210, 255, 0.7);
+}
+
+.promptToggle {
+  display: flex;
+  gap: 10px;
+  background: rgba(22, 29, 50, 0.84);
+  border-radius: 999px;
+  padding: 6px;
+  border: 1px solid rgba(96, 110, 178, 0.4);
+  width: fit-content;
+}
+
+.toggleButton {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: rgba(205, 218, 255, 0.72);
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.toggleButtonActive {
+  background: linear-gradient(135deg, rgba(124, 147, 255, 0.95), rgba(185, 197, 255, 0.78));
+  color: #0b1122;
+  font-weight: 600;
+  box-shadow: 0 10px 24px rgba(66, 89, 203, 0.55);
+}
+
+.textarea {
+  min-height: 160px;
+  border-radius: 18px;
+  padding: 18px 20px;
+  background: rgba(19, 26, 45, 0.94);
+  border: 1px solid rgba(83, 116, 221, 0.28);
+  color: #f5f7ff;
+  font-size: 1rem;
+  line-height: 1.48;
+  resize: vertical;
+}
+
+.textarea::placeholder {
+  color: rgba(186, 199, 248, 0.58);
+}
+
+.fileDrop {
+  border: 1px dashed rgba(128, 150, 255, 0.5);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  background: rgba(26, 35, 66, 0.75);
+  color: rgba(205, 218, 255, 0.72);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.fileDrop:hover {
+  border-color: rgba(162, 181, 255, 0.88);
+}
+
+.filePreview {
+  margin-top: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(104, 130, 255, 0.24);
+}
+
+.evaluateButton {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #8ea4ff, #667fff);
+  color: #080d1f;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 16px 32px rgba(73, 102, 255, 0.35);
+}
+
+.evaluateButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.evaluateButton:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(93, 120, 255, 0.4);
+}
+
+.error {
+  color: #ff8a9b;
+  background: rgba(255, 63, 108, 0.16);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.resultSection {
+  background: rgba(14, 20, 37, 0.92);
+  border: 1px solid rgba(95, 131, 255, 0.24);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 16px 32px rgba(4, 6, 16, 0.4);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.subtle {
+  color: rgba(193, 205, 255, 0.66);
+  font-size: 0.9rem;
+}
+
+.responseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.responseCard {
+  border-radius: 18px;
+  border: 1px solid rgba(116, 145, 255, 0.28);
+  background: rgba(24, 32, 59, 0.94);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.responseHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.scorePill {
+  background: linear-gradient(135deg, rgba(129, 154, 255, 0.95), rgba(172, 188, 255, 0.75));
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: #091434;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.badgeList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.miniBadge {
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(129, 152, 255, 0.18);
+  color: rgba(205, 218, 255, 0.82);
+}
+
+.bulletList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: rgba(210, 220, 255, 0.86);
+}
+
+.matrix {
+  overflow-x: auto;
+}
+
+.matrixTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.matrixTable th,
+.matrixTable td {
+  border: 1px solid rgba(94, 126, 232, 0.35);
+  padding: 10px 12px;
+  font-size: 0.86rem;
+  text-align: left;
+}
+
+.matrixTable th {
+  background: rgba(33, 48, 94, 0.72);
+  color: rgba(213, 222, 255, 0.95);
+}
+
+.matrixTable td {
+  color: rgba(203, 212, 255, 0.9);
+}
+
+.rankingList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rankingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  padding: 14px 18px;
+  background: rgba(35, 45, 81, 0.86);
+  border: 1px solid rgba(111, 138, 255, 0.35);
+  gap: 16px;
+}
+
+.rankBadge {
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(143, 166, 255, 0.25);
+  color: rgba(222, 230, 255, 0.92);
+}
+
+.userChoiceGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.choiceCard {
+  border: 1px solid rgba(96, 125, 255, 0.24);
+  border-radius: 16px;
+  background: rgba(30, 39, 71, 0.92);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.choiceCard:hover {
+  border-color: rgba(147, 170, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.choiceSelected {
+  border-color: rgba(180, 196, 255, 0.85);
+  background: rgba(70, 88, 146, 0.92);
+  box-shadow: 0 12px 26px rgba(10, 16, 42, 0.45);
+}
+
+.alignmentBanner {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(97, 232, 183, 0.16);
+  border: 1px solid rgba(97, 232, 183, 0.35);
+  color: #8ce3ca;
+  font-weight: 600;
+}
+
+.misalignmentBanner {
+  background: rgba(255, 118, 132, 0.16);
+  border-color: rgba(255, 118, 132, 0.45);
+  color: #ff98b2;
+}
+
+.pendingNote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(203, 212, 255, 0.68);
+}
+
+@media (max-width: 1024px) {
+  .panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 32px 12px 72px;
+  }
+
+  .hero {
+    padding: 24px 20px;
+  }
+
+  .panel {
+    padding: 22px 20px;
+  }
+
+  .resultSection {
+    padding: 22px 20px;
+  }
+
+  .matrixTable {
+    min-width: 100%;
+  }
+}
